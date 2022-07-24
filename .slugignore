@@ -1,0 +1,7 @@
+data/imagenette2
+data/imagenette2_sample
+data/tiny-imagenet-200
+__pycache__
+download
+train/alexnet/alexnet_train.py
+train/alexnet/sample.py

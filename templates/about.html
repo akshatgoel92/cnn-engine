@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="px-3 py-3 text-center">
+            <h1 class="display-4">About this project</h1>
+            <div class="my-2">
+                <img style="max-width: 600px; width: 100%;" src="{{ url_for('static', filename='img/flask+pytorch.png') }}" alt="">
+            </div>
+            <p class="lead">The frontend for this project was adapted from a template provided by Imad Toubal. <br> 
+            <a href="https://github.com/imadtoubal/Pytorch-Flask-Docker-App"> View on GitHub</a>
+            </p>
+            <p class="lead">The backend and model was written and trained by Akshat Goel<br> 
+            <a href="https://github.com/akshatgoel92/cnn-engine"> View on GitHub</a>
+            </p>
+            <p>
+                By default, this app uses AlexNet image classifier that was pre-trained on two classes of the Imagenette dataset.
+                This can be easily changed with any custom deep learning model. Contributions are welcome. To learn how to contribute, 
+                visit the <a href="https://github.com/akshatgoel92/cnn-engine">repository link</a>.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+.python-version
+DS_Store
+.DS_Store
+tiny-imagenet-200
+models/
+data/
+data/imagenette2
+data/imagenette2_sample
+data/tiny-imagenet-200
+imagenette2/
+imagenette2_sample/
+__pycache__
