@@ -1,23 +1,23 @@
-from flask import Flask, render_template, request
-import torchvision.transforms as transforms
-from train.alexnet import model
-from train.utils import testing_loop
-
-
 import os
 from math import floor
+import torchvision.transforms as transforms
+
+from flask import Flask, render_template, request
+from train.utils import testing_loop
+from train.alexnet import model
+
+
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.path.join('data', 'test')
 
-app.config['UPLOAD_FOLDER'] = 'data/test'
-
-MODEL_PATH=os.path.join('models', 'alexnet_best_loss.pkl')
 CLASS_NAMES={0: 'Fish', 1: 'Dog'}
 NUM_CLASSES=len(CLASS_NAMES.keys())
-MEANS=[0.485, 0.456, 0.406]
-STDS=[0.229, 0.224, 0.225]
-IMAGE_DIM=227
+MODEL_PATH=os.path.join('models', 'alexnet_best_loss.pkl')
 
+IMAGE_DIM=227
+STDS=[0.229, 0.224, 0.225]
+MEANS=[0.485, 0.456, 0.406]
 
 @app.route('/')
 def index():
@@ -32,7 +32,6 @@ def about():
 @app.route('/infer', methods=['POST'])
 def success():
 
-    
     TRANSFORMS_LIST = [transforms.CenterCrop(IMAGE_DIM),
                        transforms.ToTensor(),
                        transforms.Normalize(mean=MEANS, std=STDS),]

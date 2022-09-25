@@ -1,6 +1,6 @@
 FROM python:3
 
-MAINTAINER Imad Toubal
+MAINTAINER Akshat Goel
 
 WORKDIR /app
 
@@ -12,6 +12,20 @@ RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY './models' .
+
+COPY './templates' .
+
+COPY './static' .
+
+COPY './heroku.yml' .
+
+COPY './app.py' .
+
+COPY './assets' .
+
+COPY './Procfile' .
+
+COPY './train' .
 
 CMD ["python", "app.py"]
