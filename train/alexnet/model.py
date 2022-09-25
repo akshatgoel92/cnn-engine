@@ -16,7 +16,6 @@ import torchvision.transforms as transforms
 
 from tqdm import tqdm
 from torch.utils import data
-from tensorboardX import SummaryWriter
 
 
     

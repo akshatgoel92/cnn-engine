@@ -14,7 +14,6 @@ from PIL import Image
 from tqdm import tqdm
 from torch.utils import data
 from train.alexnet.model import AlexNet
-from tensorboardX import SummaryWriter
 
 
 
@@ -23,13 +22,6 @@ def set_seed():
     Set random seed
     """
     return torch.initial_seed()
-
-
-def set_tensorboard(LOG_DIR):
-    """
-    Setup TensorBoard logging
-    """
-    return SummaryWriter(log_dir=LOG_DIR)
 
 
 def get_model(NUM_CLASSES, device, model_name):
